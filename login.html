@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | The Fitness Zone</title>
+  <link rel="stylesheet" href="login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ✅ Header Navigation -->
+  <header>
+    <h1>The Fitness Zone</h1>
+    <nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="facility.html">Facility</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="login.html" class="login-btn-header">Login</a></li> <!-- ✅ Fix: Moved inside <li> and correct class -->
+  </ul>
+</nav>
+
+  </header>
+
+  <!-- ✅ Login Form Container -->
+  <div class="login-container">
+    <h2>Member Login</h2>
+    <form id="loginForm" action="login.php" method="POST">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="john@example.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required placeholder="Enter Password" />
+      </div>
+
+      <button type="submit" name="submit">Login</button>
+      <p class="error-message" id="errorMsg">Invalid credentials</p>
+
+    <!-- ✅ Extra Login Options -->
+    <div class="login-options">
+      <p>Don't have an account? <a href="membership.html">Create New Account</a></p>
+      <p><a href="index.html">Logout</a></p>
+    </div>
+  </div>
+  </form>
+
+  <!-- ✅ JS (optional if needed) -->
+  <script src="login.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+:root {
+    --red: #e50914;
+    --white: #fff;
+    --dark: #111;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('login.png') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    text-align: center;
+}
+
+/* Logo or Title */
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--white);
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 10px 0 0 0;
+    flex-wrap: wrap;
+}
+
+nav li {
+    display: inline-block;
+}
+
+/* General nav link styles */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+    font-size: 1rem;
+    padding: 6px 12px;
+    white-space: nowrap;
+    border-radius: 6px;
+}
+
+/* Hover & active states */
+nav a:hover,
+nav a.active {
+    color: #d10000;
+    font-weight: bold;
+    border-bottom: 2px solid #d10000;
+}
+
+.login-btn-header {
+    background-color: var(--red);
+    padding: 12px 28px;
+    border-radius: 999px;
+    color: white !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    display: inline-block;
+    text-decoration: none !important;
+}
+
+.login-btn-header:hover {
+    background-color: #b1060f;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(229, 9, 20, 0.8);
+}
+
+
+/* Login Form */
+.login-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    max-width: 420px;
+    width: 90%;
+    margin-top: 150px;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.login-container h2 {
+    margin-bottom: 25px;
+    color: var(--white);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+button {
+    width: 100%;
+    padding: 14px 0;
+    background-color: #e50914;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #b1060f;
+    transform: scale(1.05);
+}
+
+.error-message {
+    margin-top: 15px;
+    color: #ff4d4d;
+    display: none;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.login-options {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.login-options a {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+        height: auto;
+        background-attachment: scroll;
+        justify-content: flex-start;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        gap: 10px;
+        margin-top: 8px;
+    }
+
+    .login-container {
+        padding: 25px 20px;
+        margin-top: 130px;
+        width: 95%;
+    }
+
+    .login-container h2 {
+        font-size: 1.5rem;
+    }
+
+    input {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 0.95rem;
+        padding: 12px;
+    }
+}

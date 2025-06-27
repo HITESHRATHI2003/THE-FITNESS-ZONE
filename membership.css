@@ -1,0 +1,366 @@
+:root {
+    --red: #e50914;
+    --white: #fff;
+    --dark: #111;
+    --gray: #333;
+    --light-gray: #aaa;
+    --blue: #77dae4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(-45deg, #111, #1a1a1a, rgb(255, 138, 138), #111);
+    background-size: 400% 400%;
+    animation: animatedBG 15s ease infinite;
+    color: var(--white);
+    line-height: 1.6;
+    padding: 0.5rem;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 0.8rem 0;
+    border-bottom: 2px solid var(--red);
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    color: var(--white);
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--red);
+    border-bottom: 2px solid var(--red);
+}
+
+/* ✅ Fixed Login Button */
+.login-container button {
+    background-color: var(--red);
+    color: white;
+    font-weight: bold;
+    padding: 12px 0;
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(229, 9, 20, 0.4);
+}
+
+.login-container button:hover {
+    background-color: #b1060f;
+    transform: scale(1.03);
+}
+
+/* Styled Login Link as Button */
+nav a.login-btn {
+    background-color: var(--red);
+    color: var(--white);
+    font-weight: bold;
+    padding: 0.4rem 1.2rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(229, 9, 20, 0.4);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+nav a.login-btn:hover {
+    background-color: #b1060f;
+    transform: scale(1.05);
+    color: var(--white);
+    border-bottom: none;
+}
+
+
+/* Membership Form */
+.membership-container {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    animation: slideIn 1s ease-in-out;
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+.membership-container h2 {
+    color: var(--red);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--light-gray);
+    font-size: 0.9rem;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: var(--white);
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    background: #333;
+}
+
+/* Membership Submit Button */
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff3b3b;
+}
+
+.success-message {
+    margin-top: 1rem;
+    text-align: center;
+    color: #0f0;
+    font-weight: bold;
+    display: none;
+}
+
+/* Payment Section */
+.payment-section {
+    text-align: center;
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    animation: fadeIn 1.2s ease-in-out;
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+.payment-section h3 {
+    color: var(--red);
+    margin-bottom: 1rem;
+}
+
+.payment-methods {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.payment-methods li {
+    background: #222;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 0.95rem;
+    transition: background 0.3s;
+}
+
+.payment-methods li:hover {
+    background: var(--red);
+}
+
+/* Flip Card Animation */
+.flip-card-wrapper {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.flip-card-container {
+    width: 220px;
+    height: 280px;
+    position: relative;
+}
+
+.flip-card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.flip-card:hover {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    box-shadow: 0 0 10px var(--red);
+    text-align: center;
+    padding: 1rem;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.flip-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Animations */
+@keyframes animatedBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ✅ Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 0.6rem 0;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        gap: 0.3rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+    }
+
+    .membership-container,
+    .payment-section {
+        padding: 1rem;
+        margin: 0 1rem 2rem;
+    }
+
+    .payment-methods {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flip-card-container {
+        width: 90%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+
+    .flip-card {
+        height: 100%;
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+}

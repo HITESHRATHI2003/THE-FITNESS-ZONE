@@ -1,0 +1,179 @@
+:root {
+    --red: #e50914;
+    --white: #fff;
+    --dark: #111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #000000, #b30000);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+/* 🔻 Header */
+header {
+    background-color: #000;
+    padding: 10px 16px;
+    text-align: center;
+    border-bottom: 3px solid var(--red);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    color: #ff2c2c;
+    font-size: 2rem;
+}
+
+/* 🔻 Navigation */
+header nav {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding-bottom: 10px;
+}
+
+header nav a {
+    color: #f3f0f0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Hover & Active */
+header nav a:hover,
+header nav a.active {
+    color: var(--red);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ✅ Login Button Styling */
+header nav a.login-btn {
+    background-color: var(--red);
+    color: var(--white);
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 24px;
+    border-radius: 12px;
+    letter-spacing: 1px;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.2;
+    border: none;
+    box-shadow: 0 4px 10px rgba(229, 9, 20, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+header nav a.login-btn:hover {
+    background-color: #b1060f;
+    transform: scale(1.05);
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* 🔻 Gallery Section */
+.gallery-section {
+    padding: 90px 16px 40px;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 2rem;
+    color: var(--red);
+    margin-bottom: 30px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+/* 🔻 Media Grid */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 0 10px;
+}
+
+.media-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.media-card:hover {
+    transform: scale(1.05) rotateX(5deg);
+    box-shadow: 0 0 40px rgba(255, 44, 44, 0.9);
+}
+
+.media-card img,
+.media-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.media-card:hover img,
+.media-card:hover video {
+    transform: scale(1.1);
+}
+
+/* 🔻 Fade-in animation */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🔻 Mobile Tweaks */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header nav {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    header nav a {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+
+    .gallery-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .media-grid {
+        grid-template-columns: 1fr;
+        padding: 0 8px;
+    }
+
+    .media-card {
+        border-radius: 10px;
+    }
+
+    .media-card:hover {
+        transform: scale(1.02) rotateX(3deg);
+    }
+}
